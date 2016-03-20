@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">IMC</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_sobre">Sobre IMC</string>
+    <string name="action_peso">Sobre Peso Ideal</string>
+    <string name="hint_peso">Peso em kg</string>
+    <string name="hint_altura">Altura em m</string>
+    <string name="text_btn_CalcularIMC">Calcular IMC</string>
+    <string name="text_btn_PesoIdeal">Calcular Peso Ideal</string>
+    <string name="title_activity_scrolling_activity_sobre">IMC</string>
+    <string name="large_text_imc">
+        "Índice de Massa Corporal(IMC)\n\n"
+
+        "O IMC é o padrão pelo qual você pode ver se seus níveis de gordura e peso estão dentro do recomendado pela Organização Mundial de Saúde."
+        "No entanto, não é recomendado a aplicação em crianças e em pessoas musculosas, pois podem ter o IMC alto"
+        "e não serem consideradas gordas. "
+        "\n\n \bAtenção: A influência de diferenças raciais e étnicas pode interferir no cálculo do IMC"
+        "De acordo com a organização mundial de saúde, pessoas de origem asiática poderiam ser"
+        "consideradas acima do peso com um IMC de 23.\n"
+        "\nUma dieta equilibrada e fazer exercícios ajuda na perda de peso,"
+        "para perder peso com saúde sempre procure um profissional habilitado.\n\n"
+
+    </string>
+    <string name="title_activity_scrolling__peso_ideal">Peso Ideal</string>
+    <string name="large_text_pesoIdeal">
+        "Peso ideal\n\n"
+
+        "Existem fórmulas específicas para calcular o peso de cada sexo, no entanto, este aplicativo"
+        "utiliza uma fórmula geral para o cálculo do Peso Ideal.\n\n"
+        "A forma mais precisa para determinar se você está fora do seu peso seria a medição do "
+        "percentual de gordura corporal.\n\n"
+        "Uma outra forma de ver se você está abaixo ou acima do peso é mendição da circuferência da"
+        "sua cintura, pois se ela medir 90 centímetros ou mais, isso pode apresentar um risco para sua saúde,"
+        "por este motivo é recomendado que procure um profissional da area que possa te orientar e calcular"
+        "uma dieta certa para que você possa alcançar seu peso ideal.\n\n"
+
+    </string>
+</resources>
