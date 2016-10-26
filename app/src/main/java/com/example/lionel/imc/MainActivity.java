@@ -1,11 +1,9 @@
 package com.example.lionel.imc;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -13,27 +11,28 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.lionel.imc.base.BaseActivity;
+import com.github.pinball83.maskededittext.MaskedEditText;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.orhanobut.dialogplus.DialogPlus;
 
-import java.nio.ByteOrder;
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     private double peso;
     private double altura;
 
-    private TextView resultadoImc;
+    //private TextView resultadoImc;
     //private TextView pesoIdeal;
 
-    private EditText editPeso;
+    private MaskedEditText editPeso;
     private EditText editAltura;
 
     private SimpleAdapter adapter;
@@ -46,37 +45,16 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        carregarADS_Banner();
         //TypefaceProvider.registerDefaultIconSets(); //Android-Bootstrap
 
-        resultadoImc = (TextView ) findViewById(R.id.textViewImc);
+        //resultadoImc = (TextView ) findViewById(R.id.textViewImc);
         //pesoIdeal = (TextView) findViewById(R.id.textViewPesoIdeal);
 
-        editPeso = (EditText) findViewById(R.id.input_peso);
+        editPeso = (MaskedEditText) findViewById(R.id.input_peso);
         editAltura = (EditText) findViewById(R.id.input_altura);
-    }
 
-    public void carregarADS_Banner(){
-        try {
-            RelativeLayout banner = (RelativeLayout) findViewById(R.id.banner);
-
-            AdView ads = new AdView(this);
-            ads.setAdSize(AdSize.SMART_BANNER);
-
-            // insira o código do banner aqui
-
-            ads.setAdUnitId("ca-app-pub-9023747170083444/6722176011");
-            AdRequest request = new AdRequest.Builder().build();
-
-            //seta o device como despositivo de teste para impedir que você clique nos bannes por acidente
-            request.isTestDevice(this);
-
-            banner.addView(ads);
-            ads.loadAd(request);
-
-        } catch (Exception e) {
-            Log.e("carregarADS_Banner", e.getMessage());
-        }
+        RelativeLayout banner = (RelativeLayout) findViewById(R.id.banner);
+        carregarADS_Banner(this, banner);
     }
 
     public void calcularImc(View view){
@@ -85,7 +63,8 @@ public class MainActivity extends AppCompatActivity {
         String messageResult = "";
         int colorResult = 0;
 
-       if(editPeso.getText().toString().equals("") || editAltura.getText().toString().equals("")){
+        System.out.println("Peso =========="+editPeso.getText()+"fimPeso");
+       if(editPeso.getText().toString().equals("  .    ") || editAltura.getText().toString().equals(" .    ") ){
             Toast.makeText(this, "Preencha todos os campos", Toast.LENGTH_SHORT).show();
         }else {
 
@@ -93,72 +72,53 @@ public class MainActivity extends AppCompatActivity {
             altura = Double.valueOf(editAltura.getText().toString()).doubleValue();
 
             double imc = round((peso / (altura * altura)), 2);
-
+            //TODO: Fazer teclado sumir quando messageResult aparecer
             if (imc < 16.00) {
                 imcResult = imc;
-                messageResult = "\nBaixo Peso Grau III, procure um especialista.";
-                colorResult = Color.parseColor("#FF0000");
-
-               /* resultadoImc.setTextColor(Color.parseColor("#FF0000"));
-                resultadoImc.setText("O valor do seu IMC é: " + imc + "\nBaixo Peso Grau III, procure um especialista.");*/
-
+                messageResult = "\nVocê está com magreza grave, procure um especialista.";
+                colorResult = Color.parseColor("#01579B");
             } else if (imc >= 16.00 && imc < 17.00) {
                 imcResult = imc;
-                messageResult = "\nBaixo Peso Grau II, procure um especialista.";
-                colorResult = Color.parseColor("#FF0000");
-
-                /*resultadoImc.setText("O valor do seu IMC é: " + imc + "\nBaixo Peso Grau II, procure um especialista.");
-                resultadoImc.setTextColor(Color.parseColor("#FF0000"));*/
+                messageResult = "\nVocê está com magreza moderada, procure um especialista.";
+                colorResult = Color.parseColor("#0288D1");
             } else if (imc >= 17.00 && imc < 18.50) {
                 imcResult = imc;
-                messageResult = "\nBaixo Peso Grau I, procure um especialista.";
-                colorResult = Color.parseColor("#FFCC00");
-
-                /*resultadoImc.setTextColor(Color.parseColor("#FFCC00"));
-                resultadoImc.setText("O valor do seu IMC é: " + imc + "\nBaixo Peso Grau I, procure um especialista.");*/
+                messageResult = "\nVocê está com magreza leve, procure um especialista.";
+                colorResult = Color.parseColor("#03A9F4");
             } else if (imc >= 18.50 && imc < 25.00) {
                 imcResult = imc;
                 messageResult = "\nParabéns, você está no seu peso ideal.";
-                colorResult = Color.parseColor("#009900");
-
-                /*resultadoImc.setTextColor(Color.parseColor("#009900"));
-                resultadoImc.setText("O valor do seu IMC é: " + imc + "\nParabéns, você está no seu peso ideal.");*/
+                colorResult = Color.parseColor("#00C853");
             } else if (imc >= 25.00 && imc < 30.00) {
                 imcResult = imc;
                 messageResult = "\nVocê está com sobrepeso, procure um especialista.";
-                colorResult = Color.parseColor("#FFCC00");
-
-                /*resultadoImc.setTextColor(Color.parseColor("#FFCC00"));
-                resultadoImc.setText("O valor do seu IMC é: " + imc + "\nVocê está com sobrepeso, procure um especialista.");*/
+                colorResult = Color.parseColor("#FFD600");
             } else if (imc >= 30.00 && imc < 35.00) {
                 imcResult = imc;
-                messageResult = "\nObesidade Grau I, procure um especialista.";
-                colorResult = Color.parseColor("#FF0000");
-
-                /*resultadoImc.setTextColor(Color.parseColor("#FF0000"));
-                resultadoImc.setText("O valor do seu IMC é: " + imc + "\nObesidade Grau I, procure um especialista.");*/
+                messageResult = "\nVocê está com Obesidade Grau I, procure um especialista.";
+                colorResult = Color.parseColor("#F9A825");
             } else if (imc >= 35.00 && imc < 40.00) {
                 imcResult = imc;
-                messageResult = "\nObesidade Grau II, procure um especialista.";
-                colorResult = Color.parseColor("#FF0000");
-
-                /*resultadoImc.setTextColor(Color.parseColor("#FF0000"));
-                resultadoImc.setText("O valor do seu IMC é: " + imc + "\nObesidade Grau II, procure um especialista.");*/
+                messageResult = "\nVocê está com Obesidade Grau II, procure um especialista.";
+                colorResult = Color.parseColor("#E53935");
             } else if (imc >= 40.00) {
                 imcResult = imc;
-                messageResult = "\nObesidade Grau III, procure um especialista.";
-                colorResult = Color.parseColor("#FF0000");
-
-                /*resultadoImc.setTextColor(Color.parseColor("#FF0000"));
-                resultadoImc.setText("O valor do seu IMC é: " + imc + "\nObesidade Grau III, procure um especialista.");*/
+                messageResult = "\nVocê está com Obesidade Grau III, procure um especialista.";
+                colorResult = Color.parseColor("#B71C1C");
             }
 
-           adapter = new SimpleAdapter(this, true, 1, imcResult, messageResult, colorResult, 0);
-           dialog();
+           PesoIdealPojo pesoIdeal = calcularPesoIdeal();
+//           Toast.makeText(this, pesoIdeal.toString(), Toast.LENGTH_SHORT).show();
+
+           adapter = new SimpleAdapter(this, imcResult, messageResult, colorResult, pesoIdeal.getMessage(), pesoIdeal.getPesMin(), pesoIdeal.getPesMax(), pesoIdeal.getCor());
+           dialog(adapter);
+
+
         }
     }
 
-    public void calcularPesoIdeal(View view) {
+    public PesoIdealPojo calcularPesoIdeal() {
+        PesoIdealPojo idealPojo = null;
 
         if (editAltura.getText().toString().equals("")) {
             Toast.makeText(this, "Informe sua altura", Toast.LENGTH_SHORT).show();
@@ -169,10 +129,11 @@ public class MainActivity extends AppCompatActivity {
             double pesoMin = altura * altura * 18.50;
             double pesoMax = altura * altura * 24.99;
 
-            //pesoIdeal.setTextColor(Color.parseColor("#000099"));
-            //pesoIdeal.setText("O peso ideal para sua altura é entre " + round(pesoMin, 2) + " kg e " + round(pesoMax, 2) + "kg.");
+            idealPojo = new PesoIdealPojo("O peso ideal para sua altura é entre ", round(pesoMin, 2), round(pesoMax, 2), Color.parseColor("#000099"));
         }
+        return idealPojo;
     }
+
     public static double round(double value, int places) {
         if (places < 0) throw new IllegalArgumentException();
 
@@ -198,9 +159,7 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+
 
         if (id == R.id.action_sobre){
             Intent intent = new Intent(MainActivity.this, ScrollingActivitySobre.class);
@@ -219,9 +178,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void dialog(){
-
-
+    public void dialog(SimpleAdapter adapter){
 
         DialogPlus dialog = DialogPlus.newDialog(this)
                 .setAdapter(adapter)
@@ -235,6 +192,17 @@ public class MainActivity extends AppCompatActivity {
                 .setGravity(Gravity.BOTTOM)
                 .create();
         dialog.show();
+        hideKeyBoard();
+
     }
+
+    public void hideKeyBoard(){
+        View view = this.getCurrentFocus();
+        if (view != null) {
+            InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
+    }
+
 
 }

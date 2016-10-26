@@ -9,9 +9,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.lionel.imc.MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,13 +20,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ScrollingActivitySobre"
+            android:name="com.example.lionel.imc.ScrollingActivitySobre"
             android:label="@string/title_activity_scrolling_activity_sobre"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity
-            android:name=".Scrolling_PesoIdeal"
+            android:name="com.example.lionel.imc.Scrolling_PesoIdeal"
             android:label="@string/title_activity_scrolling__peso_ideal"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"
+            ></activity>
     </application>
 
 </manifest>

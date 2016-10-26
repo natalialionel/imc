@@ -8,9 +8,9 @@
     android:gravity="center_horizontal">
 
     <android.support.v7.widget.CardView
-        android:id="@+id/card_title"
+        android:id="@+id/card_Resultado"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="90dp"
         card_view:cardElevation="5dp"
         card_view:cardUseCompatPadding="true"
         card_view:cardPreventCornerOverlap="true"
@@ -28,8 +28,8 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Resultado"
-                android:textColor="@color/colorPrimaryDark"
-                android:id="@+id/textView3"
+                android:textColor="@color/white"
+                android:id="@+id/textViewResultado"
                 android:gravity="center"
                 android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"
@@ -38,19 +38,352 @@
                 android:layout_alignParentStart="true" />
         </RelativeLayout>
     </android.support.v7.widget.CardView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:id="@+id/row1"
+            android:layout_margin="4dp"
+            android:padding="5dp"
+            android:layout_gravity="center_vertical"
+            >
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@color/magreza_grave"
+                android:layout_centerVertical="true"
+                android:foregroundGravity="center_vertical"
+                android:id="@+id/viewBaixoPeso3"></View>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/magreza_grave"
+                android:id="@+id/textViewBaixoPeso3"
+                android:layout_alignTop="@+id/viewBaixoPeso3"
+                android:layout_toRightOf="@+id/viewBaixoPeso3"
+                android:layout_toEndOf="@+id/viewBaixoPeso3"
+                android:layout_marginLeft="20dp"
+                android:layout_alignBottom="@+id/viewBaixoPeso3"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView"
+                android:text="@string/indice_magreza_grave"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="20dp"
+                android:layout_alignTop="@+id/textViewBaixoPeso3"
+                android:layout_alignBottom="@+id/textViewBaixoPeso3"
+                android:gravity="center_vertical" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:id="@+id/row2"
+            android:layout_margin="4dp"
+            android:padding="5dp"
+            >
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@color/magreza_moderada"
+                android:layout_centerVertical="true"
+                android:foregroundGravity="center_vertical"
+                android:id="@+id/viewBaixoPeso2"
+                ></View>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/magreza_moderada"
+                android:id="@+id/textViewBaixoPeso2"
+                android:layout_alignTop="@+id/viewBaixoPeso2"
+                android:layout_toRightOf="@+id/viewBaixoPeso2"
+                android:layout_toEndOf="@+id/viewBaixoPeso2"
+                android:layout_marginLeft="20dp"
+                android:layout_alignBottom="@+id/viewBaixoPeso2"
+                android:gravity="center"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewIndice_magreza_moderada"
+                android:text="@string/indice_magreza_moderada"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="20dp"
+                android:layout_alignTop="@+id/textViewBaixoPeso2"
+                android:layout_alignBottom="@+id/textViewBaixoPeso2"
+                android:gravity="center_vertical" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:id="@+id/row3"
+            android:layout_margin="4dp"
+            android:padding="5dp">
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@color/magreza_leve"
+                android:id="@+id/viewBaixoPeso1"
+                android:foregroundGravity="center_vertical"
+                android:layout_centerVertical="true">
+            </View>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/magreza_leve"
+                android:id="@+id/textViewBaixoPeso1"
+                android:layout_alignTop="@+id/viewBaixoPeso1"
+                android:layout_toRightOf="@+id/viewBaixoPeso1"
+                android:layout_toEndOf="@+id/viewBaixoPeso1"
+                android:layout_marginLeft="20dp"
+                android:layout_alignBottom="@+id/viewBaixoPeso1"
+                android:gravity="center" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewIndice_magreza_leve"
+                android:text="@string/indice_magreza_leve"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="20dp"
+                android:layout_alignTop="@+id/textViewBaixoPeso1"
+                android:layout_alignBottom="@+id/textViewBaixoPeso1"
+                android:gravity="center_vertical" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:id="@+id/row4"
+            android:layout_margin="4dp"
+            android:padding="5dp">
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@color/saudavel"
+                android:id="@+id/viewPesoIdeal"
+                android:layout_centerVertical="true"
+                ></View>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/saudavel"
+                android:id="@+id/textViewPesoIdeal"
+                android:layout_alignTop="@+id/viewPesoIdeal"
+                android:layout_toRightOf="@+id/viewPesoIdeal"
+                android:layout_toEndOf="@+id/viewPesoIdeal"
+                android:layout_marginLeft="20dp"
+                android:layout_alignBottom="@+id/viewPesoIdeal"
+                android:gravity="center" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewIndice_saudavel"
+                android:text="@string/indice_saudavel"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="20dp"
+                android:layout_alignTop="@+id/textViewPesoIdeal"
+                android:layout_alignBottom="@+id/textViewPesoIdeal"
+                android:gravity="center_vertical" />
+
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:id="@+id/row5"
+            android:layout_margin="4dp"
+            android:padding="5dp">
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@color/sobrepeso"
+                android:id="@+id/viewSobrepeso"
+                android:layout_centerVertical="true"
+                ></View>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sobrepeso"
+                android:id="@+id/textViewSobrepeso"
+                android:layout_alignTop="@+id/viewSobrepeso"
+                android:layout_toRightOf="@+id/viewSobrepeso"
+                android:layout_toEndOf="@+id/viewSobrepeso"
+                android:layout_marginLeft="20dp"
+                android:gravity="center"
+                android:layout_alignBottom="@+id/viewSobrepeso" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewIndice_sobrepeso"
+                android:text="@string/indice_sobrepeso"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="20dp"
+                android:layout_alignTop="@+id/textViewSobrepeso"
+                android:layout_alignBottom="@+id/textViewSobrepeso"
+                android:gravity="center_vertical" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:id="@+id/row6"
+            android:layout_margin="4dp"
+            android:padding="5dp">
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@color/obesidade_grau1"
+                android:id="@+id/viewObesidade1"
+                android:layout_centerVertical="true"
+                ></View>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/obesidade_grau1"
+                android:id="@+id/textViewObesidade1"
+                android:layout_alignTop="@+id/viewObesidade1"
+                android:layout_toRightOf="@+id/viewObesidade1"
+                android:layout_toEndOf="@+id/viewObesidade1"
+                android:layout_marginLeft="20dp"
+                android:gravity="center"
+                android:layout_alignBottom="@+id/viewObesidade1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewIndice_obesidade1"
+                android:text="@string/indice_obesidade_grau1"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="20dp"
+                android:layout_alignTop="@+id/textViewObesidade1"
+                android:layout_alignBottom="@+id/textViewObesidade1"
+                android:gravity="center_vertical" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:id="@+id/row7"
+            android:layout_margin="4dp"
+            android:padding="5dp">
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@color/obesidade_grau2"
+                android:id="@+id/viewObesidade2"
+                android:layout_centerVertical="true"
+                ></View>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/obesidade_grau2"
+                android:id="@+id/textViewObesidade2"
+                android:layout_alignTop="@+id/viewObesidade2"
+                android:layout_toRightOf="@+id/viewObesidade2"
+                android:layout_toEndOf="@+id/viewObesidade2"
+                android:layout_marginLeft="20dp"
+                android:gravity="center"
+                android:layout_alignBottom="@+id/viewObesidade2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewIndice_obesidade2"
+                android:text="@string/indice_obesidade_grau2"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="20dp"
+                android:layout_alignTop="@+id/textViewObesidade2"
+                android:layout_alignBottom="@+id/textViewObesidade2"
+                android:gravity="center_vertical" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:id="@+id/row8"
+            android:layout_margin="4dp"
+            android:padding="5dp">
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@color/obesidade_grau3"
+                android:id="@+id/viewObesidade3"
+                android:layout_centerVertical="true"
+                ></View>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/obesidade_grau3"
+                android:id="@+id/textViewObesidade3"
+                android:gravity="center"
+                android:layout_toEndOf="@+id/viewObesidade3"
+                android:layout_toRightOf="@+id/viewObesidade3"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="20dp"/>
+
+           <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewIndice_obesidade3"
+                android:text="@string/indice_obesidade_grau3"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="21dp"
+                android:layout_alignTop="@+id/textViewObesidade3"
+                android:layout_alignBottom="@+id/textViewObesidade3"
+                android:gravity="center" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
 
     <android.support.v7.widget.CardView
-        android:id="@+id/card"
+        android:id="@+id/cardPesoIdeal"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="110dp"
         card_view:cardElevation="5dp"
         card_view:cardUseCompatPadding="true"
         card_view:cardPreventCornerOverlap="true"
         card_view:cardMaxElevation="5dp"
         card_view:cardCornerRadius="5dp"
         android:layout_marginRight="4dp"
-        android:layout_marginLeft="4dp"
-        android:background="#ffffff">
+        android:layout_marginLeft="4dp">
+
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -60,26 +393,25 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_below="@+id/input_layout_titulo_nn"
                 android:layout_centerHorizontal="true"
                 android:gravity="center_vertical"
-                android:padding="15dp">
-
+                android:padding="5dp">
 
                 <TextView
-                    android:id="@+id/text_view_item_2"
+                    android:id="@+id/pesoidealResult"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:textColor="#ffffff"
                     android:textSize="18dp"
                     android:text="test"
-                    android:layout_marginTop="10dp"/>
+                    android:padding="5dp"
+                    />
+                <!--android:textColor="#ffffff"-->
 
             </LinearLayout>
 
         </RelativeLayout>
-    </android.support.v7.widget.CardView>
+    </android.support.v7.widget.CardView>-->
 
 
 

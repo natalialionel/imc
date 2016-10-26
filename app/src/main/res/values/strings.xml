@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">IMC</string>
-    <string name="action_settings">Settings</string>
     <string name="action_sobre">Sobre IMC</string>
     <string name="action_peso">Sobre Peso Ideal</string>
     <string name="hint_peso">Peso em kg</string>
@@ -9,30 +8,48 @@
     <string name="text_btn_PesoIdeal">Calcular Peso Ideal</string>
     <string name="title_activity_scrolling_activity_sobre">IMC</string>
     <string name="large_text_imc">
-        "Índice de Massa Corporal(IMC)\n\n"
+        "<b>Índice de Massa Corporal(IMC)</b>"
 
-        "O IMC é o padrão pelo qual você pode ver se seus níveis de gordura e peso estão dentro do recomendado pela Organização Mundial de Saúde."
-        "No entanto, não é recomendado a aplicação em crianças e em pessoas musculosas, pois podem ter o IMC alto"
-        "e não serem consideradas gordas. "
-        "\n\n \bAtenção: A influência de diferenças raciais e étnicas pode interferir no cálculo do IMC"
-        "De acordo com a organização mundial de saúde, pessoas de origem asiática poderiam ser"
-        "consideradas acima do peso com um IMC de 23.\n"
-        "\nUma dieta equilibrada e fazer exercícios ajuda na perda de peso,"
-        "para perder peso com saúde sempre procure um profissional habilitado.\n\n"
+        "O IMC é o padrão pelo qual você pode verificar se seus níveis de gordura e peso estão dentro do recomendado pela Organização Mundial de Saúde.\n"
+        "No entanto, não é recomendado a aplicação em crianças e em pessoas musculosas, pois podem ter o IMC alto e não serem consideradas gordas.\n"
+        "<b>Atenção:</b> A influência de diferenças raciais e étnicas pode interferir no cálculo do IMC. De acordo com a organização mundial de saúde, pessoas de origem asiática poderiam ser consideradas acima do peso com um IMC de 23.\n"
+        "Uma dieta equilibrada e prática de exercícios ajudam a perder peso, para que isto seja feito com saúde sempre procure um profissional habilitado.\n\n"
 
     </string>
     <string name="title_activity_scrolling__peso_ideal">Peso Ideal</string>
     <string name="large_text_pesoIdeal">
-        "Peso ideal\n\n"
+        "<b>Peso Ideal</b>"
 
-        "Existem fórmulas específicas para calcular o peso de cada sexo, no entanto, este aplicativo"
-        "utiliza uma fórmula geral para o cálculo do Peso Ideal.\n\n"
-        "A forma mais precisa para determinar se você está fora do seu peso seria a medição do "
-        "percentual de gordura corporal.\n\n"
-        "Uma outra forma de ver se você está abaixo ou acima do peso é mendição da circuferência da"
-        "sua cintura, pois se ela medir 90 centímetros ou mais, isso pode apresentar um risco para sua saúde,"
-        "por este motivo é recomendado que procure um profissional da area que possa te orientar e calcular"
-        "uma dieta certa para que você possa alcançar seu peso ideal.\n\n"
+        "Existem fórmulas específicas para calcular o peso de cada sexo, no entanto, este aplicativo utiliza uma fórmula geral para a realização do cálculo do Peso Ideal.\n"
+        "A forma mais precisa para determinar se você está fora do seu peso seria a medição do percentual de gordura corporal.\n"
+        "Uma outra forma de ver se você está abaixo ou acima do peso é medição da circuferência da sua cintura, pois se ela medir 90 centímetros ou mais, isso pode apresentar um risco para sua saúde,
+        por este motivo é recomendado que procure um profissional da area que possa te orientar e passar
+        uma dieta adequada para você alcançar o seu peso ideal.\n\n"
 
     </string>
+
+    <string name="magreza_grave">Magreza Grave</string>
+    <string name="magreza_moderada">Magreza Moderada</string>
+    <string name="magreza_leve">Magreza Leve</string>
+    <string name="saudavel">Saudável</string>
+    <string name="sobrepeso">Sobrepeso</string>
+    <string name="obesidade_grau1">Obesidade Grau I</string>
+    <string name="obesidade_grau2">Obesidade Grau II</string>
+    <string name="obesidade_grau3">Obesidade \n Grau III</string>
+
+
+    <string name="indice_magreza_grave"> menor que 16.0 </string>
+    <string name="indice_magreza_moderada">16.0 - 18.4</string>
+    <string name="indice_magreza_leve">17.0 - 18.4</string>
+    <string name="indice_saudavel">18.5 - 24.9 </string>
+    <string name="indice_sobrepeso">25.0 - 29.9</string>
+    <string name="indice_obesidade_grau1">30.0 - 34.9</string>
+    <string name="indice_obesidade_grau2">35.0 - 39.9</string>
+    <string name="indice_obesidade_grau3"> maior ou igual\n a 40.0 </string>
+
+
+
+
+
+
 </resources>

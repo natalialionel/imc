@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#009688</color>
-    <color name="colorPrimaryDark">#00796B</color>
-    <color name="colorAccent">#00BCD4</color>
-    <color name="fbutton_color_concrete">#95a5a6</color>
+
+    <color name="colorPrimary">#388E3C</color>
+    <color name="colorPrimaryDark">#1B5E20</color>
+    <color name="colorAccent">#4CAF50</color>
+    <color name="colorSombra">#43A047</color>
+
+    <color name="colorBackground">#263238</color>
+    <color name="white">#ffffff</color>
+    <color name="fbutton_color_concrete">#d4d8d9</color>
     <color name="fbutton_color_asbestos">#7f8c8d</color>
     <color name="fbutton_color_turquoise">#1abc9c</color>
     <color name="fbutton_color_emerald">#2ecc71</color>
+
+    <color name="magreza_grave">#01579B</color>
+    <color name="magreza_moderada">#0288D1</color>
+    <color name="magreza_leve">#03A9F4</color>
+    <color name="saudavel">#00C853</color>
+    <color name="sobrepeso">#FFD600</color>
+    <color name="obesidade_grau1">#F9A825</color>
+    <color name="obesidade_grau2">#E53935</color>
+    <color name="obesidade_grau3">#B71C1C</color>
 </resources>

@@ -15,10 +15,6 @@
         android:text="@string/large_text_pesoIdeal"
         android:textSize="18dp" />
 
-
-
-
-
 </android.support.v4.widget.NestedScrollView>
 
 
