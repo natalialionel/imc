@@ -4,24 +4,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Gravity;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.WindowManager;
+import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.example.lionel.imc.base.BaseActivity;
-import com.github.pinball83.maskededittext.MaskedEditText;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdSize;
-import com.google.android.gms.ads.AdView;
 import com.orhanobut.dialogplus.DialogPlus;
 
 public class MainActivity extends BaseActivity {
@@ -29,10 +22,7 @@ public class MainActivity extends BaseActivity {
     private double peso;
     private double altura;
 
-    //private TextView resultadoImc;
-    //private TextView pesoIdeal;
-
-    private MaskedEditText editPeso;
+    private EditText editPeso;
     private EditText editAltura;
 
     private SimpleAdapter adapter;
@@ -45,12 +35,7 @@ public class MainActivity extends BaseActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //TypefaceProvider.registerDefaultIconSets(); //Android-Bootstrap
-
-        //resultadoImc = (TextView ) findViewById(R.id.textViewImc);
-        //pesoIdeal = (TextView) findViewById(R.id.textViewPesoIdeal);
-
-        editPeso = (MaskedEditText) findViewById(R.id.input_peso);
+        editPeso = (EditText) findViewById(R.id.input_peso);
         editAltura = (EditText) findViewById(R.id.input_altura);
 
         RelativeLayout banner = (RelativeLayout) findViewById(R.id.banner);
@@ -63,16 +48,24 @@ public class MainActivity extends BaseActivity {
         String messageResult = "";
         int colorResult = 0;
 
-        System.out.println("Peso =========="+editPeso.getText()+"fimPeso");
-       if(editPeso.getText().toString().equals("  .    ") || editAltura.getText().toString().equals(" .    ") ){
+        String replacePeso;
+        String replaceAltura;
+
+
+       if(editPeso.getText().toString().equals("") || editAltura.getText().toString().equals("") ){
             Toast.makeText(this, "Preencha todos os campos", Toast.LENGTH_SHORT).show();
         }else {
+           replaceAltura = editAltura.getText().toString();
+           replaceAltura = replaceAltura.replace(",", ".");
 
-            peso = Double.valueOf(editPeso.getText().toString()).doubleValue();
-            altura = Double.valueOf(editAltura.getText().toString()).doubleValue();
+           replacePeso = editPeso.getText().toString();
+           replacePeso = replacePeso.replace(",", ".");
+
+            peso = Double.valueOf(replacePeso.toString()).doubleValue();
+            altura = Double.valueOf(replaceAltura.toString()).doubleValue();
 
             double imc = round((peso / (altura * altura)), 2);
-            //TODO: Fazer teclado sumir quando messageResult aparecer
+
             if (imc < 16.00) {
                 imcResult = imc;
                 messageResult = "\nVocê está com magreza grave, procure um especialista.";
